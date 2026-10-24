@@ -1,6 +1,6 @@
 # GitHub Actions 与 GitHub Pages 部署说明
 
-> **当前状态（重要）**：GitHub Pages 站点已于 2026-10-24 成功部署：<https://caosili114514.github.io/campus-competition-radar/>。首次自动部署因 Pages 来源尚未配置而失败；完成 Settings → Pages → GitHub Actions 后，手动部署运行成功。`Upload competition data` 工作流尚未首次执行，线上仍是演示数据。下面保留网页配置步骤，便于复核或迁移。
+> **当前状态（重要）**：GitHub Pages 站点已于 2026-10-24 成功部署：<https://caosili114514.github.io/campus-competition-radar/>。首次自动部署因 Pages 来源尚未配置而失败；完成 Settings → Pages → GitHub Actions 后，手动部署运行成功。`Update competition data` 工作流随后成功运行，生成并提交了 5 条 `data_mode: live`、全部 `pending` 的公开采集记录。第二个更新运行曾因测试仍假设发布数据必须是 demo 而失败，现已把测试改为同时兼容 demo/live 并重新验证。下面保留网页配置步骤，便于复核或迁移。
 
 ## 1. 架构与前置条件
 
@@ -46,7 +46,7 @@
    - `python .github/scripts/publish_staged_data.py --sources collector/sources.json --stage collector-output --target docs/data`
    - 仅当发布脚本返回 `published=true` 且 `docs/data/` 有变化时，以 `github-actions[bot]` 身份提交并普通 push（不使用 force）。
 5. 如果数据未变化，No data changes to commit. 是正常的成功结果。当前配置已启用六个候选来源；如果所有来源都不可用、过滤后没有可采集记录，采集器仍可成功产出空数据，发布保护会保留演示数据，不应把空结果当作已核验的完整赛事库。
-6. 安全保护：如果没有任何 `enabled=true` 的信息源，或 staging 为 0 条记录而现有 `docs/data` 仍是演示数据，发布脚本会跳过替换并保留现有数据。此时工作流日志会出现 `[SKIP]` 和原因（例如 `no_enabled_sources`）；不要把它描述成已经完成了一次有效线上采集。要产生 live 数据，必须由维护者人工启用并核验具体来源；不要为了制造成功记录而随意打开全部候选来源。
+6. 安全保护：如果没有任何 `enabled=true` 的信息源，或 staging 为 0 条记录而现有 `docs/data` 仍是演示数据，发布脚本会跳过替换并保留现有数据。此时工作流日志会出现 `[SKIP]` 和原因（例如 `no_enabled_sources`）；不要把它描述成已经完成了一次有效线上采集。当前维护者已为当前采集范围启用六个候选来源，但每个来源仍保持 `verified=false`；扩大来源范围前应逐源复核许可和解析质量。
 
 ### 第 5 步：部署站点
 
@@ -66,7 +66,7 @@
 
 ### `update-data.yml`
 
-- 触发：每天 UTC `18:17` 的 `schedule`，以及 `workflow_dispatch`。
+- 触发：每天 UTC `18:17` 的 `schedule`，以及 `workflow_dispatch`。手动运行可选 `force`，用于忽略 `update_frequency` 立即重采。
 - 并发组：`update-competition-data`，不取消正在运行的任务，避免两个采集任务同时写数据。
 - 权限：`contents: write`，用于提交 `docs/data/`。
 - 先运行 Python 与 Node 测试；把现有 live 的竞赛记录、信息源调度状态、运行历史和日志视图安全地种子到一次性的 `collector-output/`（demo 不会作为 live 历史注入），再运行采集器，最后先校验 staging 数据。校验不通过时不会替换或提交数据。
@@ -117,4 +117,4 @@ GitHub Free 的 Actions、Pages、私有仓库额度和公共仓库政策会随�
 
 ## 7. 本次交付边界
 
-本次已创建：`.github/workflows/update-data.yml`、`.github/workflows/deploy-pages.yml`、`.github/scripts/check_workflows_structure.py`、`.github/scripts/validate_data.py`、`.github/scripts/seed_staging_data.py`、`.github/scripts/publish_staged_data.py` 和根 `.nojekyll`。两个 workflow 已用临时开发工具 PyYAML 做完整语法解析并检查关键触发/权限；PyYAML 不是项目运行依赖。GitHub Pages 部署工作流已由维护者手动运行成功，线上站点见文首地址；数据更新工作流尚未首次运行，真实公开来源记录仍需采集和人工核验。
+本次已创建：`.github/workflows/update-data.yml`、`.github/workflows/deploy-pages.yml`、`.github/scripts/check_workflows_structure.py`、`.github/scripts/validate_data.py`、`.github/scripts/seed_staging_data.py`、`.github/scripts/publish_staged_data.py` 和根 `.nojekyll`。两个 workflow 已用临时开发工具 PyYAML 做完整语法解析并检查关键触发/权限；PyYAML 不是项目运行依赖。GitHub Pages 部署工作流已由维护者手动运行成功，线上站点见文首地址；首次数据更新工作流也已经成功运行并发布了 5 条 pending 公开记录。后续真实公开来源记录仍需持续人工核验。

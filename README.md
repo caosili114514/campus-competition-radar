@@ -2,7 +2,7 @@
 
 一个面向大学生的免费、可部署竞赛信息情报平台：自动采集公开竞赛通知，统一字段与数据质量检查，在静态站点中提供仪表盘、组合筛选、竞赛详情、报名截止提醒、收藏与报名进度管理、信息源运行记录和来源核验信息。
 
-> **当前交付状态**：项目代码、测试和 GitHub Actions/Pages 配置已经完成，静态站点已通过 GitHub Pages 手动部署成功：<https://caosili114514.github.io/campus-competition-radar/>。当前线上数据仍是 **明确标记的合成演示数据**（`data_mode: demo`，10 条记录），不是真实赛事。数据更新工作流尚未首次执行；六个公开候选来源已在配置中设为 `enabled: true`，但仍未人工核验。下文不会把演示数据说成真实赛事。
+> **当前交付状态**：项目代码、测试和 GitHub Actions/Pages 配置已经完成，静态站点已通过 GitHub Pages 部署成功：<https://caosili114514.github.io/campus-competition-radar/>。首次 `Update competition data` 工作流已成功运行，线上数据已切换为 **`data_mode: live` 的 5 条公开采集记录**，全部仍为 `verification_status: pending`，不是官方确认信息。六个公开候选来源均已启用，但没有任何来源或记录被标记为已验证。
 
 ![桌面仪表盘](docs/screenshots/dashboard.png)
 
@@ -10,7 +10,7 @@
 | --- | --- |
 | ![竞赛发现](docs/screenshots/competitions.png) | ![竞赛详情](docs/screenshots/detail.png) |
 
-移动端与信息源运行页截图分别位于 `docs/screenshots/mobile-dashboard.png` 和 `docs/screenshots/sources.png`。所有截图展示的是明确标记的模拟数据。
+移动端与信息源运行页截图分别位于 `docs/screenshots/mobile-dashboard.png` 和 `docs/screenshots/sources.png`。截图拍摄于演示数据阶段，并已明确显示演示横幅；当前线上数据已切换为待核验的公开采集记录。
 
 ## 1. 已实现功能
 
@@ -70,19 +70,19 @@ python -m http.server 4173
 
 ### 已发布数据
 
-`docs/data/competitions.json` 当前是 10 条合成演示记录，覆盖正在报名、即将截止、已截止、无截止日期、无报名链接、链接异常、信息不完整和待人工核验等场景。每条记录都有 `is_demo: true`，名称以【模拟】开头，来源名称明确标注为合成。它们不得作为真实赛事发布或报名依据。
+`docs/data/competitions.json` 当前是 `data_mode: live` 的 5 条自动采集记录，来源于中国大学生计算机设计大赛、全国大学生电子设计竞赛和全国大学生广告艺术大赛的公开通知。所有记录均为 `verification_status: pending`，报名截止和报名入口等未确认字段保持 `null`，不能视为官方确认或报名开放。原先的 10 条合成演示数据仍可通过 `tools/generate_demo_data.py` 和 `tests/fixtures/` 复现，只用于测试与界面演示。
 
 ### 信息源
 
 `collector/sources.json` 配置了六个真实候选官方来源，当前维护者已将它们全部设为 **`enabled: true`、`verified: false`**：中国大学生计算机设计大赛、全国大学生信息安全竞赛、全国大学生电子设计竞赛、全国大学生数学建模竞赛、全国大学生广告艺术大赛、中国大学生服务外包创新创业大赛。启用表示允许低频采集，不表示来源或记录已核验。
 
-开发期实际核查结果见 [docs/SOURCES.md](docs/SOURCES.md)：六个列表页当时均返回 HTTP 200；robots.txt 已检查；将六源临时启用并每源限制 2 条候选后，真实采集成功输出 5 条全部为 `pending` 的临时记录并通过契约校验。但这个结果没有写入站点数据，也没有把来源或记录标记为已核验。抓取许可、逐条正文真实性、主办方授权和报名状态仍需维护者人工确认。
+开发期和首次线上采集结果见 [docs/SOURCES.md](docs/SOURCES.md)：六个列表页返回 HTTP 200，robots.txt 已检查；六个来源已启用，首次数据更新输出 5 条全部为 `pending` 的 live 记录并通过契约校验。来源和记录均未标记为已核验；抓取许可、逐条正文真实性、主办方授权和报名状态仍需维护者人工确认。
 
-### 如何切换到真实数据
+### 当前真实数据采集与安全扩量
 
-1. 阅读目标站点的服务条款和 robots.txt，人工确认允许低频公开采集。
-2. 当前 `collector/sources.json` 已将六个候选来源设为 `enabled: true`；如不希望访问某个来源，请把它改回 `false`。不要无依据设置 `verified: true`。
-3. 先运行采集和校验，确认输出质量：
+1. 首次真实数据采集已经上线；如不希望访问某个来源，请把它改回 `enabled: false`。不要无依据设置 `verified: true`。
+2. 如需新增来源，先阅读目标站点服务条款和 robots.txt，再添加独立配置并用低频测试；不要把未验证来源直接标记为已验证。
+3. 本地复核可执行：
 
 ```powershell
 Remove-Item -Recurse -Force collector-output -ErrorAction SilentlyContinue
@@ -93,7 +93,7 @@ python .github/scripts/publish_staged_data.py --sources collector/sources.json -
 python .github/scripts/validate_data.py --data-dir docs/data
 ```
 
-没有启用任何来源、或 staging 为 0 条而当前仍是演示数据时，发布脚本会安全跳过，避免把演示数据换成空 live 数据。已有 live 数据时会保留历史和运行失败记录。
+没有启用任何来源、或 staging 为 0 条而当前仍为演示数据时，发布脚本会安全跳过；已有 live 数据时会保留历史和运行失败记录。首次 live 数据已生成，后续采集通过来源调度、过滤器和质量校验控制。
 
 ## 4. 采集器用法
 
@@ -145,11 +145,11 @@ python -m collector.wechat --url "https://mp.weixin.qq.com/s/..." --output colle
 1. 将完整项目上传/推送到 GitHub 仓库 `main` 分支。
 2. `Settings -> Actions -> General`：启用 Actions，Workflow permissions 设为 Read and write。
 3. `Settings -> Pages -> Build and deployment -> Source`：选择 **GitHub Actions**。
-4. 打开 `Actions -> Update competition data -> Run workflow`。如果筛选后没有有效记录，发布保护会保留现有演示数据。
+4. 打开 `Actions -> Update competition data -> Run workflow`，需要立即重新采集时勾选 `force`。如果筛选后没有有效记录，发布保护会保留现有数据。
 5. 运行 `Actions -> Deploy static site to GitHub Pages -> Run workflow`，或在更新工作流成功后等待 `workflow_run` 自动部署。
 6. 打开 Pages 环境给出的地址，项目站点通常为 `https://<owner>.github.io/<repo>/`。
 
-GitHub Actions 的 cron 使用 UTC，当前为每天 UTC 18:17（北京时间次日 02:17）。计划任务可能延迟甚至跳过，不保证准点；需要立即更新时使用手动触发。Actions 和 Pages 均未在本工作区实际运行或发布，因此当前没有在线网址。
+GitHub Actions 的 cron 使用 UTC，当前为每天 UTC 18:17（北京时间次日 02:17）。计划任务可能延迟甚至跳过，不保证准点；需要立即更新时使用手动触发。Pages 部署与首次数据更新工作流均已实际运行成功，线上地址见文首。
 
 免费额度、平台限制、纯静态架构边界和需要后端才能实现的能力见 [docs/KNOWN_LIMITATIONS.md](docs/KNOWN_LIMITATIONS.md)。
 

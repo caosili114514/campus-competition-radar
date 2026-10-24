@@ -7,6 +7,12 @@ on:
   schedule:
     - cron: '17 18 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: '忽略 update_frequency，立即强制采集所有启用来源'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -42,7 +48,11 @@ jobs:
         run: |
           rm -rf collector-output
           python .github/scripts/seed_staging_data.py --target docs/data --stage collector-output
-          python -m collector --sources collector/sources.json --output collector-output --max-records 300 --max-link-checks 200
+          FORCE_ARG=""
+          if [ "${{ inputs.force }}" = "true" ]; then
+            FORCE_ARG="--force"
+          fi
+          python -m collector --sources collector/sources.json --output collector-output --max-records 300 --max-link-checks 200 ${FORCE_ARG}
 
       - name: Validate staged data before publishing
         run: python .github/scripts/validate_data.py --data-dir collector-output

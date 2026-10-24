@@ -1,4 +1,4 @@
-﻿"""Lead integration checks for the checked-in demo dataset and source policy."""
+﻿"""Lead integration checks for the checked-in published dataset and source policy."""
 from __future__ import annotations
 
 import json
@@ -21,7 +21,7 @@ REQUIRED = {
 }
 
 
-class PublishedDemoTests(unittest.TestCase):
+class PublishedDataTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.competitions = json.loads((DATA / "competitions.json").read_text(encoding="utf-8-sig"))
@@ -29,17 +29,24 @@ class PublishedDemoTests(unittest.TestCase):
         cls.meta = json.loads((DATA / "meta.json").read_text(encoding="utf-8-sig"))
         cls.quality = json.loads((DATA / "quality-report.json").read_text(encoding="utf-8-sig"))
 
-    def test_every_published_demo_record_is_marked_and_has_contract_fields(self):
-        self.assertEqual(self.competitions["data_mode"], "demo")
-        self.assertTrue(self.competitions["records"])
+    def test_published_records_have_contract_and_demo_is_marked(self):
+        mode = self.competitions["data_mode"]
+        self.assertIn(mode, {"demo", "live"})
         for record in self.competitions["records"]:
             self.assertTrue(REQUIRED.issubset(record), record.get("id"))
-            self.assertIs(record["is_demo"], True)
-            self.assertIn("【模拟】", record["title"])
             self.assertNotEqual(record["content_hash"], "0" * 64)
+            if mode == "demo":
+                self.assertIs(record["is_demo"], True)
+                self.assertIn("【模拟】", record["title"])
+            else:
+                self.assertIs(record["is_demo"], False)
+        if mode == "demo":
+            self.assertTrue(self.competitions["records"])
 
 
     def test_demo_links_and_organizers_cannot_be_mistaken_for_real_events(self):
+        if self.competitions["data_mode"] != "demo":
+            self.skipTest("当前发布数据已切换为 live，演示链接约束不适用")
         for record in self.competitions["records"]:
             self.assertIn("演示", record["organizer"])
             for field in ("official_notice_url", "registration_url", "source_url"):
@@ -49,7 +56,7 @@ class PublishedDemoTests(unittest.TestCase):
                     self.assertIn(host, {"example.com", "example.invalid"}, f"{record['id']}.{field}")
             self.assertIn("演示", record["verification_notes"])
 
-    def test_demo_reports_and_counts_are_consistent(self):
+    def test_published_reports_and_counts_are_consistent(self):
         records = self.competitions["records"]
         self.assertEqual(len(records), self.competitions["record_count"])
         self.assertEqual(self.meta["summary"]["record_count"], len(records))

@@ -1,6 +1,6 @@
 ﻿# 数据字段说明（Schema 1.0.0）
 
-> 当前 `docs/data/competitions.json` 为功能演示数据（`data_mode: "demo"`）。所有记录均带有 `is_demo: true`，名称以【模拟】开头，不是真实赛事，不得用于报名、转发或对外宣称。真实上线前必须由维护者核实信息源，并切换为 `data_mode: "live"`。
+> 当前 `docs/data/competitions.json` 为 `data_mode: "live"` 的公开采集数据（2026-10-24 首次采集 5 条）。所有记录仍为 `verification_status: pending`，不得视为官方确认或报名开放。历史演示数据仍可通过 `tools/generate_demo_data.py` 复现，并只用于本地测试与界面演示；所有演示记录必须保持 `is_demo: true` 和全站演示标识。
 
 ## 1. 文件布局
 
