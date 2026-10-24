@@ -42,7 +42,7 @@ jobs:
         run: |
           rm -rf collector-output
           python .github/scripts/seed_staging_data.py --target docs/data --stage collector-output
-          python -m collector --sources collector/sources.json --output collector-output
+          python -m collector --sources collector/sources.json --output collector-output --max-records 300 --max-link-checks 200
 
       - name: Validate staged data before publishing
         run: python .github/scripts/validate_data.py --data-dir collector-output
