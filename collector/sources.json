@@ -63,7 +63,7 @@
         "人气奖",
         "投票"
       ],
-      "max_items_per_run": 10,
+      "max_items_per_run": 20,
       "request_delay_seconds": 2.0
     },
     {
@@ -378,7 +378,7 @@
         "人气奖",
         "投票"
       ],
-      "max_items_per_run": 10,
+      "max_items_per_run": 20,
       "request_delay_seconds": 2.0
     }
   ]
