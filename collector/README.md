@@ -25,11 +25,11 @@ fixture 来源使用 `fixture://文件名`，只读本地目录，不联网。
 
 ## 默认来源验证状态
 
-`collector/sources.json` 中的六个真实候选来源当前全部为 `enabled: false`、`verified: false`，并附有明确 `verification_note`。
+`collector/sources.json` 中的六个真实候选来源当前全部为 `enabled: true`、`verified: false`，并附有明确 `verification_note`。`enabled` 表示允许低频采集，不代表来源或记录已人工核验。
 候选包括中国大学生计算机设计大赛、全国大学生信息安全竞赛、全国大学生电子设计竞赛、全国大学生数学建模竞赛、全国大学生广告艺术大赛、中国大学生服务外包创新创业大赛。
 
 Lead 于 2026-10-24 实测过六个列表页 HTTP 200 并检查了 robots.txt；开发期还把六个来源临时启用、每源限 2 条候选做了一次真实采集，采集器正常完成并通过数据契约校验，产出 5 条全部为 pending 的临时 live 记录（未写入 docs/data）。这不等于抓取许可、逐条正文真实性或主办方授权已验证，程序不会把任何默认来源标记为已验证。
-默认运行会生成空 live 数据，并在 meta.json / quality-report.json / sources.json 中明确说明无启用来源、未抓取、未核验。空数据不代表没有赛事。
+当前配置会实际访问六个候选来源；如果全部失败或过滤后没有记录，仍会生成空 live staging 数据，并在 meta.json / quality-report.json / sources.json 中明确说明未获得可用记录。空数据不代表没有赛事。
 
 ## 输出文件
 

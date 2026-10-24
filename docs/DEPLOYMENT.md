@@ -1,6 +1,6 @@
 # GitHub Actions 与 GitHub Pages 部署说明
 
-> **当前状态（重要）**：本仓库只提交了工作流配置和本文档，**尚未在 GitHub 上实际部署，也尚未实际触发或验证 Actions 运行**，因此没有可声称的线上地址或成功运行记录。下面是从 GitHub 网页完成首次上线所需的最少步骤；第一次运行的结果以 GitHub Actions 页面和 Pages 环境输出为准。
+> **当前状态（重要）**：GitHub Pages 站点已于 2026-10-24 成功部署：<https://caosili114514.github.io/campus-competition-radar/>。首次自动部署因 Pages 来源尚未配置而失败；完成 Settings → Pages → GitHub Actions 后，手动部署运行成功。`Upload competition data` 工作流尚未首次执行，线上仍是演示数据。下面保留网页配置步骤，便于复核或迁移。
 
 ## 1. 架构与前置条件
 
@@ -45,7 +45,7 @@
    - `python .github/scripts/validate_data.py --data-dir collector-output`
    - `python .github/scripts/publish_staged_data.py --sources collector/sources.json --stage collector-output --target docs/data`
    - 仅当发布脚本返回 `published=true` 且 `docs/data/` 有变化时，以 `github-actions[bot]` 身份提交并普通 push（不使用 force）。
-5. 如果数据未变化，No data changes to commit. 是正常的成功结果。默认信息源未启用或没有可采集记录时，采集器可以成功产出空数据，不应把空结果当作已核验的完整赛事库。
+5. 如果数据未变化，No data changes to commit. 是正常的成功结果。当前配置已启用六个候选来源；如果所有来源都不可用、过滤后没有可采集记录，采集器仍可成功产出空数据，发布保护会保留演示数据，不应把空结果当作已核验的完整赛事库。
 6. 安全保护：如果没有任何 `enabled=true` 的信息源，或 staging 为 0 条记录而现有 `docs/data` 仍是演示数据，发布脚本会跳过替换并保留现有数据。此时工作流日志会出现 `[SKIP]` 和原因（例如 `no_enabled_sources`）；不要把它描述成已经完成了一次有效线上采集。要产生 live 数据，必须由维护者人工启用并核验具体来源；不要为了制造成功记录而随意打开全部候选来源。
 
 ### 第 5 步：部署站点
@@ -117,4 +117,4 @@ GitHub Free 的 Actions、Pages、私有仓库额度和公共仓库政策会随�
 
 ## 7. 本次交付边界
 
-本次已创建：`.github/workflows/update-data.yml`、`.github/workflows/deploy-pages.yml`、`.github/scripts/check_workflows_structure.py`、`.github/scripts/validate_data.py`、`.github/scripts/seed_staging_data.py`、`.github/scripts/publish_staged_data.py` 和根 `.nojekyll`。两个 workflow 已用临时开发工具 PyYAML 做完整语法解析并检查关键触发/权限；PyYAML 不是项目运行依赖。没有实际在 GitHub 上运行 Actions。仓库尚未真正部署，完成上述网页步骤并成功运行工作流后，才可宣称上线。
+本次已创建：`.github/workflows/update-data.yml`、`.github/workflows/deploy-pages.yml`、`.github/scripts/check_workflows_structure.py`、`.github/scripts/validate_data.py`、`.github/scripts/seed_staging_data.py`、`.github/scripts/publish_staged_data.py` 和根 `.nojekyll`。两个 workflow 已用临时开发工具 PyYAML 做完整语法解析并检查关键触发/权限；PyYAML 不是项目运行依赖。GitHub Pages 部署工作流已由维护者手动运行成功，线上站点见文首地址；数据更新工作流尚未首次运行，真实公开来源记录仍需采集和人工核验。

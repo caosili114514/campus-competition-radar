@@ -28,7 +28,7 @@ python -m collector \
 {
   "schema_version": "1.0.0",
   "generated_at": "2026-10-24T21:06:22+08:00",
-  "notice": "候选来源均 enabled=false、verified=false。",
+  "notice": "六个候选来源均由维护者设置为 enabled=true、verified=false。",
   "sources": []
 }
 ```
@@ -94,7 +94,7 @@ python -m collector \
 
 ## 4. 实际核查过的候选来源
 
-以下结果由项目开发过程中于 2026-10-24 用公开 HTTP 请求实测，**只能说明当时列表页可达，不能说明抓取许可、正文内容或活动仍有效**。所有候选默认 `enabled=false`、`verified=false`。
+以下结果由项目开发过程中于 2026-10-24 用公开 HTTP 请求实测，**只能说明当时列表页可达，不能说明抓取许可、正文内容或活动仍有效**。维护者随后把六个候选来源全部设为 `enabled=true`，但全部保持 `verified=false`。
 
 | 来源 | 列表页 | 实测 | robots.txt | 结论 |
 | --- | --- | --- | --- | --- |
@@ -146,7 +146,7 @@ python -m collector.wechat \
 
 - 六个候选列表页均实际返回 HTTP 200。
 - robots.txt 核查：`ciscn` 与 `sun_ada` 返回 200 Allow；`mcm` 返回 200 空规则；`jsjds`、`nuedc`、`fwwb` 返回 404（无规则文件）。程序对 401/403、超时和不可确认情况采取保守跳过。
-- 将六个来源临时设为启用、每源最多 2 条候选后执行真实采集：命令退出码 0，耗时约 21.5 秒；3 个来源成功解析，3 个来源因当前公告不符合赛事过滤条件而返回空结果，0 个来源网络失败。
+- 将六个来源启用、每源最多 2 条候选后执行真实采集：命令退出码 0，耗时约 21.5 秒；3 个来源成功解析，3 个来源因当前公告不符合赛事过滤条件而返回空结果，0 个来源网络失败。
 - 本次输出 5 条 live 记录，全部 `verification_status=pending` 且 `verified` 来源数为 0；5 个官方通知链接进行了 HTTP 事实检查，无一条被宣告为报名开放或官方确认。
 - 采集器完成了列表解析、顺序详情正文抓取、发布/正文时间提取、团队人数与适用对象保守抽取、HTTP 链接事实记录以及数据契约校验。
 - 结果使用 `.github/scripts/validate_data.py` 校验通过：5 records、6 sources、20 log entries。

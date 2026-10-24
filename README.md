@@ -2,7 +2,7 @@
 
 一个面向大学生的免费、可部署竞赛信息情报平台：自动采集公开竞赛通知，统一字段与数据质量检查，在静态站点中提供仪表盘、组合筛选、竞赛详情、报名截止提醒、收藏与报名进度管理、信息源运行记录和来源核验信息。
 
-> **当前交付状态**：项目代码、演示数据、测试和 GitHub Actions/Pages 配置已经完成。当前提交的数据是 **明确标记的合成演示数据**（`data_mode: demo`，10 条记录），不是真实赛事。尚未在 GitHub 上实际运行 Actions，也尚未发布在线网址。下文不会把本地测试说成线上运行。
+> **当前交付状态**：项目代码、测试和 GitHub Actions/Pages 配置已经完成，静态站点已通过 GitHub Pages 手动部署成功：<https://caosili114514.github.io/campus-competition-radar/>。当前线上数据仍是 **明确标记的合成演示数据**（`data_mode: demo`，10 条记录），不是真实赛事。数据更新工作流尚未首次执行；六个公开候选来源已在配置中设为 `enabled: true`，但仍未人工核验。下文不会把演示数据说成真实赛事。
 
 ![桌面仪表盘](docs/screenshots/dashboard.png)
 
@@ -74,14 +74,14 @@ python -m http.server 4173
 
 ### 信息源
 
-`collector/sources.json` 配置了六个真实候选官方来源，但**全部 `enabled: false`、`verified: false`**：中国大学生计算机设计大赛、全国大学生信息安全竞赛、全国大学生电子设计竞赛、全国大学生数学建模竞赛、全国大学生广告艺术大赛、中国大学生服务外包创新创业大赛。
+`collector/sources.json` 配置了六个真实候选官方来源，当前维护者已将它们全部设为 **`enabled: true`、`verified: false`**：中国大学生计算机设计大赛、全国大学生信息安全竞赛、全国大学生电子设计竞赛、全国大学生数学建模竞赛、全国大学生广告艺术大赛、中国大学生服务外包创新创业大赛。启用表示允许低频采集，不表示来源或记录已核验。
 
 开发期实际核查结果见 [docs/SOURCES.md](docs/SOURCES.md)：六个列表页当时均返回 HTTP 200；robots.txt 已检查；将六源临时启用并每源限制 2 条候选后，真实采集成功输出 5 条全部为 `pending` 的临时记录并通过契约校验。但这个结果没有写入站点数据，也没有把来源或记录标记为已核验。抓取许可、逐条正文真实性、主办方授权和报名状态仍需维护者人工确认。
 
 ### 如何切换到真实数据
 
 1. 阅读目标站点的服务条款和 robots.txt，人工确认允许低频公开采集。
-2. 在 `collector/sources.json` 中为确认过的来源设置 `enabled: true`；不要无依据设置 `verified: true`。
+2. 当前 `collector/sources.json` 已将六个候选来源设为 `enabled: true`；如不希望访问某个来源，请把它改回 `false`。不要无依据设置 `verified: true`。
 3. 先运行采集和校验，确认输出质量：
 
 ```powershell
@@ -145,7 +145,7 @@ python -m collector.wechat --url "https://mp.weixin.qq.com/s/..." --output colle
 1. 将完整项目上传/推送到 GitHub 仓库 `main` 分支。
 2. `Settings -> Actions -> General`：启用 Actions，Workflow permissions 设为 Read and write。
 3. `Settings -> Pages -> Build and deployment -> Source`：选择 **GitHub Actions**。
-4. 打开 `Actions -> Update competition data -> Run workflow`。默认没有启用来源时会安全跳过并保留演示数据。
+4. 打开 `Actions -> Update competition data -> Run workflow`。如果筛选后没有有效记录，发布保护会保留现有演示数据。
 5. 运行 `Actions -> Deploy static site to GitHub Pages -> Run workflow`，或在更新工作流成功后等待 `workflow_run` 自动部署。
 6. 打开 Pages 环境给出的地址，项目站点通常为 `https://<owner>.github.io/<repo>/`。
 

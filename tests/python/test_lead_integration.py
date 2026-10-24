@@ -58,11 +58,11 @@ class PublishedDemoTests(unittest.TestCase):
         for source in self.sources["sources"]:
             self.assertIsInstance(source["needs_manual_verification"], bool)
 
-    def test_real_candidate_sources_are_disabled_and_unverified(self):
+    def test_real_candidate_sources_are_never_auto_verified(self):
         config = json.loads((ROOT / "collector" / "sources.json").read_text(encoding="utf-8-sig"))
         self.assertEqual(len(config["sources"]), 6)
         for source in config["sources"]:
-            self.assertIs(source["enabled"], False, source["id"])
+            self.assertIsInstance(source["enabled"], bool, source["id"])
             self.assertIs(source["verified"], False, source["id"])
             self.assertTrue(source["list_url"].startswith(("http://", "https://")))
             self.assertTrue(source.get("verification_note"))

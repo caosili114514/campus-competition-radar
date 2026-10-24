@@ -29,12 +29,13 @@ class ConfigTests(unittest.TestCase):
                 "source_type": "official", "verified": True,
             })
 
-    def test_default_candidates_are_disabled_and_unverified(self):
+    def test_default_candidates_never_auto_verify_and_have_safe_filters(self):
         sources = load_sources("collector/sources.json")
         self.assertEqual(len(sources), 6)
-        self.assertTrue(all(source["enabled"] is False for source in sources))
+        self.assertTrue(all(isinstance(source["enabled"], bool) for source in sources))
         self.assertTrue(all(source["verified"] is False for source in sources))
         self.assertTrue(all(source["url_include_pattern"] for source in sources))
+        self.assertTrue(all(source.get("verification_note") for source in sources))
 
 
 class FetcherTests(unittest.TestCase):

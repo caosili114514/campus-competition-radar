@@ -9,7 +9,7 @@
 - Node.js：v24.21.0（测试使用内置 `node:test`）
 - 浏览器：Microsoft Edge Headless（实际渲染与交互验收）
 - 子路径托管：本地 HTTP 服务器从仓库父目录提供带空格/中文的目录路径，模拟 GitHub Pages 项目子路径
-- GitHub Actions 与 GitHub Pages：本工作区没有远程 GitHub 仓库权限，未实际运行或部署
+- GitHub Actions 与 GitHub Pages：用户已在 GitHub 网页完成仓库配置；Pages 部署工作流成功，线上地址为 <https://caosili114514.github.io/campus-competition-radar/>；数据更新工作流尚未首次运行
 
 ## 2. 自动化测试
 
@@ -41,6 +41,8 @@ npm test
 
 ## 3. 数据契约与发布保护
 
+以下安全采集与发布保护测试是在六个来源仍为 disabled 的配置下实际执行的，用于验证不会用空数据覆盖演示内容。
+
 已发布演示数据：
 
 ```powershell
@@ -50,7 +52,7 @@ python tools/validate_data.py --data-dir docs/data
 
 结果：两份校验器均通过。CI 校验器报告 5 个 JSON 文件、10 条记录、3 个演示来源、3 条日志记录；要求字段、ISO 时区、枚举、content_hash、计数一致性、重复 ID/标题/URL 与 JSONL 均可解析。
 
-默认真实配置的安全采集：
+启用来源前的安全采集回归：
 
 ```powershell
 Remove-Item -Recurse -Force collector-output -ErrorAction SilentlyContinue
@@ -62,7 +64,7 @@ python .github/scripts/publish_staged_data.py --sources collector/sources.json -
 
 实际结果：
 
-- 默认 6 个候选来源全部 `enabled: false`、`verified: false`。
+- 该回归测试时 6 个候选来源全部 `enabled: false`、`verified: false`。
 - 采集器退出码 0，生成空的 `data_mode: live` staging 数据，运行状态为 `no_enabled_sources`。
 - staging 数据契约校验通过：0 records、6 sources、8 log entries。
 - 发布脚本输出 `[SKIP] No source has enabled=true`，`published=false`，`docs/data/` 全部文件哈希前后不变。
@@ -110,17 +112,23 @@ python .github/scripts/publish_staged_data.py --sources collector/sources.json -
 - `.github/workflows/deploy-pages.yml`：push main、手动触发、数据更新成功后的 `workflow_run`；使用 GitHub Pages artifact 部署。
 - 根目录 `.nojekyll`，无需前端构建。
 
-已执行：工作流结构/关键字段检查，2 个 workflow 通过；另外使用临时安装到 `.tmp/` 的 PyYAML 对两个 workflow 做了完整 YAML 语法解析和关键触发/权限断言，均通过。PyYAML 只是一次性开发校验工具，不是项目运行依赖。GitHub Actions 首次真实运行仍是最终权威验证。
+已执行：
 
-未执行：
+- 工作流结构/关键字段检查，2 个 workflow 通过。
+- 使用临时安装的 PyYAML 对两个 workflow 做完整语法解析和关键触发/权限断言，均通过；PyYAML 不是项目运行依赖。
+- GitHub Pages 部署工作流 `Deploy static site to GitHub Pages` 已真实运行。
+  - 首次由 push 自动触发的运行因 Pages 尚未设置为 GitHub Actions 而失败。
+  - 完成 Settings → Pages → GitHub Actions 后，手动部署运行 40101615067 成功。
+  - 线上地址：<https://caosili114514.github.io/campus-competition-radar/>。
+  - 已实测首页、competitions.json、CSS 和 favicon 均返回 HTTP 200；Headless Edge 打开成功并显示演示数据横幅，无 JavaScript 错误。
+- `Update competition data` 尚未首次运行；六个候选来源虽已设为 enabled=true，但尚未用 GitHub Actions 发起实际采集。
 
-- 没有实际触发 GitHub Actions。
-- 没有实际部署 GitHub Pages。
-- 没有线上网址。
-- 没有验证 GitHub 的权限、分支保护、出站访问、schedule 延迟或 Pages 环境行为。
+仍未验证：
 
-这些需要在 GitHub 仓库网页中按 `docs/DEPLOYMENT.md` 完成，并以首次真实运行日志为准。
+- 每日 schedule 是否按时触发，以及 GitHub 计划任务延迟。
+- 数据更新工作流中的真实来源采集、自动提交和 `workflow_run` 部署链路。
+- 六个来源在 GitHub Actions 环境中的出站网络结果及长期页面结构稳定性。
 
 ## 7. 交付边界
 
-当前站点使用合成演示数据，UI 全站标记；真实候选来源均未启用、未人工核验。自动更新工作流已配置但未真实运行；在线发布未完成。报名、提交或缴费前必须查看主办方原始页面。需要多人登录、跨设备同步或服务端权限控制时，纯静态架构不能提供，需另建后端。
+线上站点已部署，当前仍使用合成演示数据并全站标记。`collector/sources.json` 中六个候选来源已设为 enabled=true、verified=false；自动更新工作流尚未首次运行，因此线上尚未出现自动采集的真实公开记录。采集后的记录仍必须人工核验。报名、提交或缴费前必须查看主办方原始页面。需要多人登录、跨设备同步或服务端权限控制时，纯静态架构不能提供，需另建后端。

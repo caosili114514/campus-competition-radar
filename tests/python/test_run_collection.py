@@ -221,11 +221,16 @@ class FixtureDetailTests(unittest.TestCase):
         self.assertEqual(matched, 1)
 
         with tempfile.TemporaryDirectory() as temp:
-            output = Path(temp) / "out"
+            root = Path(temp)
+            sources = root / "sources-disabled.json"
+            write_sources(sources, [source_config(
+                "disabled-source", "https://disabled.example/list", enabled=False,
+            )])
+            output = root / "out"
             stdout = io.StringIO()
             with contextlib.redirect_stdout(stdout):
                 code = cli_main([
-                    "--sources", "collector/sources.json", "--output", str(output),
+                    "--sources", str(sources), "--output", str(output),
                     "--max-records", "5",
                 ])
             self.assertEqual(code, 0)
@@ -239,9 +244,14 @@ class FixtureDetailTests(unittest.TestCase):
             self.assertFalse(any("docs" in path.lower() and "data" in path.lower() for path in [str(output)]))
 
         with tempfile.TemporaryDirectory() as temp:
-            output = Path(temp) / "must-not-exist"
+            root = Path(temp)
+            sources = root / "sources-disabled.json"
+            write_sources(sources, [source_config(
+                "disabled-source", "https://disabled.example/list", enabled=False,
+            )])
+            output = root / "must-not-exist"
             with contextlib.redirect_stdout(io.StringIO()):
-                code = cli_main(["--sources", "collector/sources.json",
+                code = cli_main(["--sources", str(sources),
                                  "--output", str(output), "--dry-run"])
             self.assertEqual(code, 0)
             self.assertFalse(output.exists())
