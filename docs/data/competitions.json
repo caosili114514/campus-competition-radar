@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-10-24T22:38:09+08:00",
+  "generated_at": "2026-10-24T23:01:08+08:00",
   "notice": "本文件由校园竞赛雷达采集框架生成。默认信息源与记录均未经人工验证；链接可访问只代表当时的 HTTP 事实，不代表报名开放、资格有效或主办方确认。",
   "record_count": 5,
   "records": [
@@ -24,7 +24,7 @@
       "source_name": "中国大学生计算机设计大赛（候选）",
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2714.htm",
       "published_at": "2026-03-18T00:00:00+08:00",
-      "fetched_at": "2026-10-24T22:37:05+08:00",
+      "fetched_at": "2026-10-24T23:00:11+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -50,7 +50,7 @@
       "change_history": [],
       "link_check": {
         "url": "https://jsjds.blcu.edu.cn/info/1042/2714.htm",
-        "checked_at": "2026-10-24T22:37:23+08:00",
+        "checked_at": "2026-10-24T23:00:24+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -71,7 +71,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-24T22:37:05+08:00"
+        "fetched_at": "2026-10-24T23:00:11+08:00"
       },
       "source_list_url": "https://jsjds.blcu.edu.cn/dsdt.htm"
     },
@@ -94,7 +94,7 @@
       "source_name": "中国大学生计算机设计大赛（候选）",
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2294.htm",
       "published_at": "2026-01-01T00:00:00+08:00",
-      "fetched_at": "2026-10-24T22:37:05+08:00",
+      "fetched_at": "2026-10-24T23:00:11+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -131,11 +131,37 @@
           "previous_content_hash": "75e39bf6b8cee7670216480e6a7a2dccb0c7109efd8adf0b14d7e93067990a62",
           "new_content_hash": "121a5e7207a926777de78eda854b8b0f4d2cbcf5618caf630189563fc3a051c9",
           "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-24T23:00:11+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "eligible_participants",
+            "description",
+            "region"
+          ],
+          "previous_content_hash": "121a5e7207a926777de78eda854b8b0f4d2cbcf5618caf630189563fc3a051c9",
+          "new_content_hash": "75e39bf6b8cee7670216480e6a7a2dccb0c7109efd8adf0b14d7e93067990a62",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-24T23:00:11+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "eligible_participants",
+            "description",
+            "region"
+          ],
+          "previous_content_hash": "75e39bf6b8cee7670216480e6a7a2dccb0c7109efd8adf0b14d7e93067990a62",
+          "new_content_hash": "121a5e7207a926777de78eda854b8b0f4d2cbcf5618caf630189563fc3a051c9",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
         }
       ],
       "link_check": {
         "url": "https://jsjds.blcu.edu.cn/info/1042/2124.htm",
-        "checked_at": "2026-10-24T22:37:29+08:00",
+        "checked_at": "2026-10-24T23:00:31+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -156,7 +182,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-24T22:37:05+08:00"
+        "fetched_at": "2026-10-24T23:00:11+08:00"
       },
       "source_list_url": "https://jsjds.blcu.edu.cn/dsdt.htm"
     },
@@ -179,7 +205,7 @@
       "source_name": "全国大学生电子设计竞赛（候选）",
       "source_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/345",
       "published_at": "2026-09-07T08:39:00+08:00",
-      "fetched_at": "2026-10-24T22:37:05+08:00",
+      "fetched_at": "2026-10-24T23:00:11+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -214,11 +240,39 @@
           "previous_content_hash": "dfa29c136fccb588785029dc144b50635a5aac02ce24be0bdd177182b87d5771",
           "new_content_hash": "a4bd25cd4dc1f6950542326f2b06a983ffcd0ef705407519b8b0908e04a13cc0",
           "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-24T23:00:11+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "category",
+            "eligible_participants",
+            "event_start",
+            "description"
+          ],
+          "previous_content_hash": "a4bd25cd4dc1f6950542326f2b06a983ffcd0ef705407519b8b0908e04a13cc0",
+          "new_content_hash": "dfa29c136fccb588785029dc144b50635a5aac02ce24be0bdd177182b87d5771",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-24T23:00:11+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "category",
+            "eligible_participants",
+            "event_start",
+            "description"
+          ],
+          "previous_content_hash": "0c28bddaea63a00f5e2c309cc5b267a8da87018e8a3e27f4c1af9905ef85cc79",
+          "new_content_hash": "a4bd25cd4dc1f6950542326f2b06a983ffcd0ef705407519b8b0908e04a13cc0",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
         }
       ],
       "link_check": {
         "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/353",
-        "checked_at": "2026-10-24T22:37:49+08:00",
+        "checked_at": "2026-10-24T23:00:51+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -239,7 +293,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-24T22:37:05+08:00"
+        "fetched_at": "2026-10-24T23:00:11+08:00"
       },
       "source_list_url": "https://www.nuedc-training.com.cn/index/news/index"
     },
@@ -262,7 +316,7 @@
       "source_name": "全国大学生电子设计竞赛（候选）",
       "source_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/343",
       "published_at": null,
-      "fetched_at": "2026-10-24T22:37:05+08:00",
+      "fetched_at": "2026-10-24T23:00:11+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -290,7 +344,7 @@
       "change_history": [],
       "link_check": {
         "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/343",
-        "checked_at": "2026-10-24T22:37:47+08:00",
+        "checked_at": "2026-10-24T23:00:49+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -311,7 +365,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-24T22:37:05+08:00"
+        "fetched_at": "2026-10-24T23:00:11+08:00"
       },
       "source_list_url": "https://www.nuedc-training.com.cn/index/news/index"
     },
@@ -334,7 +388,7 @@
       "source_name": "全国大学生广告艺术大赛（候选）",
       "source_url": "https://www.sun-ada.net/news_xqs3328.html?lid=2",
       "published_at": "2026-09-15T00:00:00+08:00",
-      "fetched_at": "2026-10-24T22:37:05+08:00",
+      "fetched_at": "2026-10-24T23:00:11+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -361,7 +415,7 @@
       "change_history": [],
       "link_check": {
         "url": "https://www.sun-ada.net/news_xqs3328.html?lid=2",
-        "checked_at": "2026-10-24T22:38:05+08:00",
+        "checked_at": "2026-10-24T23:01:05+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -382,7 +436,7 @@
         "same_domain": true,
         "content_source": "fallback",
         "error": null,
-        "fetched_at": "2026-10-24T22:37:05+08:00"
+        "fetched_at": "2026-10-24T23:00:11+08:00"
       },
       "source_list_url": "https://www.sun-ada.net/home/newss.html"
     }
