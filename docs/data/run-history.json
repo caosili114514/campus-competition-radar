@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "demo",
+  "runs": [
+    {
+      "run_id": "demo-run-20261024",
+      "started_at": "2026-10-24T20:55:27+08:00",
+      "finished_at": "2026-10-24T20:00:00+08:00",
+      "status": "demo",
+      "message": "演示数据加载，非真实采集任务",
+      "records_added": 0,
+      "records_updated": 0
+    },
+    {
+      "run_id": "demo-run-20261023",
+      "started_at": "2026-10-23T18:00:00+08:00",
+      "finished_at": "2026-10-23T18:00:00+08:00",
+      "status": "demo",
+      "message": "模拟历史运行",
+      "records_added": 0,
+      "records_updated": 0
+    }
+  ],
+  "notice": "演示运行历史，不是真实 Actions 运行记录。"
+}

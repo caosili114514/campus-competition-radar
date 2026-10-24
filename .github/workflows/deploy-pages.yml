@@ -1,0 +1,67 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'docs/data/**'
+      - 'collector/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+  workflow_run:
+    # A push made with the repository GITHUB_TOKEN does not create a new push
+    # workflow run. Trigger here after a successful scheduled/manual data update.
+    workflows:
+      - Update competition data
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload and deploy Pages artifact
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          # For workflow_run, deploy the latest default branch commit so the
+          # newly committed data from the completed update run is included.
+          ref: ${{ github.event_name == 'workflow_run' && github.event.repository.default_branch || github.ref }}
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare static Pages artifact
+        run: |
+          test -f index.html
+          touch .nojekyll
+          rm -rf .git node_modules
+          test -f .nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

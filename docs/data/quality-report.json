@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "demo",
+  "generated_at": "2026-10-24T20:55:27+08:00",
+  "summary": {
+    "message": "演示模式：共 10 条合成记录，待核验或信息不全 6 条；3 个合成来源均未进行真实网络采集。",
+    "record_count": 10,
+    "pending_verification_count": 6,
+    "verified_record_count": 3
+  },
+  "summary_text": "演示模式：共 10 条合成记录，待核验或信息不全 6 条；3 个合成来源均未进行真实网络采集。",
+  "totals": {
+    "record_count": 10,
+    "verified_record_count": 3,
+    "pending_verification_count": 6,
+    "source_count": 3,
+    "enabled_source_count": 3,
+    "successful_source_count": 0,
+    "failed_source_count": 0,
+    "disabled_source_count": 0,
+    "links_checked": 0
+  },
+  "verification_status_counts": {
+    "verified": 3,
+    "pending": 2,
+    "broken": 1,
+    "expired": 1,
+    "incomplete": 3
+  },
+  "registration_status_counts": {
+    "open": 5,
+    "upcoming": 1,
+    "closed": 2,
+    "unknown": 2
+  },
+  "field_coverage": {
+    "organizer": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    },
+    "category": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    },
+    "competition_level": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    },
+    "eligible_participants": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    },
+    "team_size": {
+      "present": 9,
+      "total": 10,
+      "percent": 90.0
+    },
+    "registration_start": {
+      "present": 8,
+      "total": 10,
+      "percent": 80.0
+    },
+    "registration_deadline": {
+      "present": 8,
+      "total": 10,
+      "percent": 80.0
+    },
+    "event_start": {
+      "present": 4,
+      "total": 10,
+      "percent": 40.0
+    },
+    "event_end": {
+      "present": 4,
+      "total": 10,
+      "percent": 40.0
+    },
+    "description": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    },
+    "requirements": {
+      "present": 9,
+      "total": 10,
+      "percent": 90.0
+    },
+    "official_notice_url": {
+      "present": 9,
+      "total": 10,
+      "percent": 90.0
+    },
+    "registration_url": {
+      "present": 4,
+      "total": 10,
+      "percent": 40.0
+    },
+    "published_at": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    },
+    "region": {
+      "present": 10,
+      "total": 10,
+      "percent": 100.0
+    }
+  },
+  "missing_field_counts": {
+    "registration_url": 6,
+    "registration_start": 2,
+    "registration_deadline": 2,
+    "event_start": 1,
+    "event_end": 1,
+    "requirements": 1,
+    "official_notice_url": 1,
+    "team_size": 1
+  },
+  "link_check_summary": {
+    "ok": 0,
+    "redirect": 0,
+    "timeout": 0,
+    "forbidden": 0,
+    "not_found": 0,
+    "connection_error": 0,
+    "js_required_page": 0,
+    "server_error": 0,
+    "http_error": 0,
+    "invalid_url": 0,
+    "unknown": 0,
+    "not_checked": 10
+  },
+  "source_summary": {
+    "total": 3,
+    "enabled": 3,
+    "success": 0,
+    "failed": 0,
+    "disabled": 0,
+    "verified": 0,
+    "needs_manual_verification": 2
+  },
+  "warnings": [
+    "当前全部为合成演示数据，不是真实赛事，禁止作为报名依据。",
+    "没有真实信息源经过人工核验；演示来源不得标记为官方确认。",
+    "演示链接仅用于展示字段与异常状态，不进行真实网络采集。",
+    "真实上线前请启用并人工核验 collector/sources.json 中的公开官方来源。"
+  ],
+  "notice": "质量报告描述演示字段完整度，不构成对赛事真实性、报名开放状态或主办方授权的认证。",
+  "record_count": 10,
+  "duplicate_id_count": 0,
+  "duplicate_url_count": 0,
+  "duplicate_title_count": 0,
+  "records_needing_manual_review": [
+    "demo-003",
+    "demo-005",
+    "demo-006",
+    "demo-007",
+    "demo-008",
+    "demo-009"
+  ],
+  "notes": [
+    "演示数据覆盖：正在报名、即将截止、已截止、无截止日期、无报名链接、链接异常、待人工核验。",
+    "重复公告场景位于 tests/fixtures/competitions.edge-cases.json，通过去重测试验证，不进入展示数据。"
+  ]
+}

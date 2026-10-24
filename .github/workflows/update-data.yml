@@ -1,0 +1,70 @@
+name: Update competition data
+
+# GitHub Actions cron uses UTC. 18:17 UTC avoids the busiest top-of-hour window.
+# Scheduled runs are best-effort: GitHub can delay them or skip them when busy.
+# Use workflow_dispatch as the manual fallback.
+on:
+  schedule:
+    - cron: '17 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-competition-data
+  cancel-in-progress: false
+
+jobs:
+  update-data:
+    name: Collect, test, validate, and commit data
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Python tests
+        run: python -m unittest discover -s tests/python -v
+
+      - name: Show Node.js version
+        run: node --version
+
+      - name: Run Node.js tests
+        run: npm test
+
+      - name: Prepare staging from live history and collect public data
+        run: |
+          rm -rf collector-output
+          python .github/scripts/seed_staging_data.py --target docs/data --stage collector-output
+          python -m collector --sources collector/sources.json --output collector-output
+
+      - name: Validate staged data before publishing
+        run: python .github/scripts/validate_data.py --data-dir collector-output
+
+      - name: Publish staged data with safety checks
+        id: publish
+        run: python .github/scripts/publish_staged_data.py --sources collector/sources.json --stage collector-output --target docs/data
+
+      - name: Validate published data contract
+        if: steps.publish.outputs.published == 'true'
+        run: python .github/scripts/validate_data.py --data-dir docs/data
+
+      - name: Commit and push data changes
+        if: steps.publish.outputs.published == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): update generated competition data"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

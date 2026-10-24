@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "data_mode": "demo",
+  "generated_at": "2026-10-24T20:55:27+08:00",
+  "last_run": {
+    "started_at": "2026-10-24T20:00:00+08:00",
+    "finished_at": "2026-10-24T20:55:27+08:00",
+    "status": "demo",
+    "message": "当前展示的是内置演示数据，不代表任何真实采集已成功运行。"
+  },
+  "summary": {
+    "source_count": 3,
+    "success_count": 0,
+    "failure_count": 0,
+    "record_count": 10,
+    "pending_verification_count": 6
+  },
+  "run_history": [
+    {
+      "run_id": "demo-run-20261024",
+      "started_at": "2026-10-24T20:55:27+08:00",
+      "finished_at": "2026-10-24T20:00:00+08:00",
+      "status": "demo",
+      "message": "演示数据加载，非真实采集任务",
+      "records_added": 0,
+      "records_updated": 0
+    },
+    {
+      "run_id": "demo-run-20261023",
+      "started_at": "2026-10-23T18:00:00+08:00",
+      "finished_at": "2026-10-23T18:00:00+08:00",
+      "status": "demo",
+      "message": "模拟历史运行",
+      "records_added": 0,
+      "records_updated": 0
+    }
+  ],
+  "notice": "本文件中的运行记录为演示；GitHub Actions 自动更新尚未在该工作区运行。"
+}

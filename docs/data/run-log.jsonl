@@ -1,0 +1,3 @@
+{"run_id": "demo-run-20261024", "timestamp": "2026-10-24T20:55:27+08:00", "level": "info", "event": "demo_loaded", "message": "加载内置演示数据；未进行真实网络采集。", "details": {"record_count": 10, "data_mode": "demo"}}
+{"run_id": "demo-run-20261024", "timestamp": "2026-10-24T20:00:00+08:00", "level": "warning", "event": "demo_not_verified", "message": "演示来源与链接均未核验，禁止标记为官方确认。", "details": {}}
+{"run_id": "demo-run-20261024", "timestamp": "2026-10-24T20:00:00+08:00", "level": "info", "event": "demo_finished", "message": "演示数据质量报告生成完成。", "details": {"records": 10}}

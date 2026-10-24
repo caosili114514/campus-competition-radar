@@ -1,0 +1,14 @@
+{
+  "name": "campus-competition-radar-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "赛讯雷达校园竞赛情报站：无构建依赖的原生 ES Modules 静态前端",
+  "scripts": {
+    "test": "node --test tests/web/*.test.js",
+    "serve": "python -m http.server 4173",
+    "test:python": "python -m unittest discover -s tests/python -v",
+    "test:all": "npm run test:python && npm test",
+    "validate": "python .github/scripts/validate_data.py --data-dir docs/data"
+  }
+}

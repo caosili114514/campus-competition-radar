@@ -1,0 +1,32 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Local environment and generated runtime files
+.env
+.env.*
+!.env.example
+*.log
+collector-output/
+tmp/
+.tmp/
+
+# Test / QA artifacts
+coverage/
+test-results/
+*.png
+!docs/screenshots/*.png
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
