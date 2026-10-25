@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-10-25T02:42:49+08:00",
+  "generated_at": "2026-10-25T12:39:43+08:00",
   "last_run": {
-    "started_at": "2026-10-25T02:42:49+08:00",
-    "finished_at": "2026-10-25T02:42:49+08:00",
-    "status": "skipped",
-    "message": "按 update_frequency/robots.txt 规则跳过 6 个启用来源（未到周期 6，manual 0，robots 0）；保留历史 5 条记录，本次未新增。"
+    "started_at": "2026-10-25T12:38:49+08:00",
+    "finished_at": "2026-10-25T12:39:43+08:00",
+    "status": "success",
+    "message": "采集完成；共输出 5 条 live 记录，全部仍需人工核验。"
   },
   "summary": {
     "source_count": 6,
-    "success_count": 0,
+    "success_count": 6,
     "failure_count": 0,
-    "skipped_count": 6,
+    "skipped_count": 0,
     "record_count": 5,
     "pending_verification_count": 5,
     "enabled_source_count": 6,
     "robots_blocked_count": 0,
-    "not_due_count": 6,
+    "not_due_count": 0,
     "manual_skipped_count": 0
   },
   "run_history": [
@@ -77,50 +77,69 @@
       "content_changed": 0,
       "record_count": 5,
       "pending_verification_count": 5
+    },
+    {
+      "run_id": "run_20261025T123849+0800_09b9ca",
+      "started_at": "2026-10-25T12:38:49+08:00",
+      "finished_at": "2026-10-25T12:39:43+08:00",
+      "status": "success",
+      "message": "采集完成；共输出 5 条 live 记录，全部仍需人工核验。",
+      "source_count": 6,
+      "success_count": 6,
+      "failure_count": 0,
+      "robots_blocked_count": 0,
+      "not_due_count": 0,
+      "manual_skipped_count": 0,
+      "skipped_count": 0,
+      "records_added": 0,
+      "records_updated": 4,
+      "content_changed": 4,
+      "record_count": 5,
+      "pending_verification_count": 5
     }
   ],
   "source_schedule": [
     {
       "id": "jsjds_blcu",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-24T23:00:11+08:00",
-      "last_success_at": "2026-10-24T23:00:11+08:00",
-      "status": "not_due"
+      "last_checked_at": "2026-10-25T12:38:49+08:00",
+      "last_success_at": "2026-10-25T12:38:49+08:00",
+      "status": "success"
     },
     {
       "id": "ciscn",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-24T23:00:11+08:00",
-      "last_success_at": "2026-10-24T23:00:11+08:00",
-      "status": "not_due"
+      "last_checked_at": "2026-10-25T12:38:49+08:00",
+      "last_success_at": "2026-10-25T12:38:49+08:00",
+      "status": "empty"
     },
     {
       "id": "nuedc",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-24T23:00:11+08:00",
-      "last_success_at": "2026-10-24T23:00:11+08:00",
-      "status": "not_due"
+      "last_checked_at": "2026-10-25T12:38:49+08:00",
+      "last_success_at": "2026-10-25T12:38:49+08:00",
+      "status": "success"
     },
     {
       "id": "mcm",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-24T23:00:11+08:00",
-      "last_success_at": "2026-10-24T23:00:11+08:00",
-      "status": "not_due"
+      "last_checked_at": "2026-10-25T12:38:49+08:00",
+      "last_success_at": "2026-10-25T12:38:49+08:00",
+      "status": "empty"
     },
     {
       "id": "sun_ada",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-24T23:00:11+08:00",
-      "last_success_at": "2026-10-24T23:00:11+08:00",
-      "status": "not_due"
+      "last_checked_at": "2026-10-25T12:38:49+08:00",
+      "last_success_at": "2026-10-25T12:38:49+08:00",
+      "status": "success"
     },
     {
       "id": "fwwb",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-24T23:00:11+08:00",
-      "last_success_at": "2026-10-24T23:00:11+08:00",
-      "status": "not_due"
+      "last_checked_at": "2026-10-25T12:38:49+08:00",
+      "last_success_at": "2026-10-25T12:38:49+08:00",
+      "status": "empty"
     }
   ],
   "notice": "本文件由校园竞赛雷达采集框架生成。默认信息源与记录均未经人工验证；链接可访问只代表当时的 HTTP 事实，不代表报名开放、资格有效或主办方确认。"
