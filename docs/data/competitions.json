@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-10-26T02:43:33+08:00",
+  "generated_at": "2026-10-27T02:57:41+08:00",
   "notice": "本文件由校园竞赛雷达采集框架生成。默认信息源与记录均未经人工验证；链接可访问只代表当时的 HTTP 事实，不代表报名开放、资格有效或主办方确认。",
   "record_count": 5,
   "records": [
@@ -24,7 +24,7 @@
       "source_name": "中国大学生计算机设计大赛（候选）",
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2714.htm",
       "published_at": "2026-03-18T00:00:00+08:00",
-      "fetched_at": "2026-10-25T12:38:49+08:00",
+      "fetched_at": "2026-10-27T02:56:43+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -50,7 +50,7 @@
       "change_history": [],
       "link_check": {
         "url": "https://jsjds.blcu.edu.cn/info/1042/2714.htm",
-        "checked_at": "2026-10-25T12:39:01+08:00",
+        "checked_at": "2026-10-27T02:56:58+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -71,7 +71,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-25T12:38:49+08:00"
+        "fetched_at": "2026-10-27T02:56:43+08:00"
       },
       "source_list_url": "https://jsjds.blcu.edu.cn/dsdt.htm"
     },
@@ -94,7 +94,7 @@
       "source_name": "中国大学生计算机设计大赛（候选）",
       "source_url": "https://jsjds.blcu.edu.cn/info/1042/2294.htm",
       "published_at": "2026-01-01T00:00:00+08:00",
-      "fetched_at": "2026-10-25T12:38:49+08:00",
+      "fetched_at": "2026-10-27T02:56:43+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -183,11 +183,37 @@
           "previous_content_hash": "75e39bf6b8cee7670216480e6a7a2dccb0c7109efd8adf0b14d7e93067990a62",
           "new_content_hash": "121a5e7207a926777de78eda854b8b0f4d2cbcf5618caf630189563fc3a051c9",
           "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-27T02:56:43+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "eligible_participants",
+            "description",
+            "region"
+          ],
+          "previous_content_hash": "121a5e7207a926777de78eda854b8b0f4d2cbcf5618caf630189563fc3a051c9",
+          "new_content_hash": "75e39bf6b8cee7670216480e6a7a2dccb0c7109efd8adf0b14d7e93067990a62",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-27T02:56:43+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "eligible_participants",
+            "description",
+            "region"
+          ],
+          "previous_content_hash": "75e39bf6b8cee7670216480e6a7a2dccb0c7109efd8adf0b14d7e93067990a62",
+          "new_content_hash": "121a5e7207a926777de78eda854b8b0f4d2cbcf5618caf630189563fc3a051c9",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
         }
       ],
       "link_check": {
         "url": "https://jsjds.blcu.edu.cn/info/1042/2124.htm",
-        "checked_at": "2026-10-25T12:39:05+08:00",
+        "checked_at": "2026-10-27T02:57:01+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -208,7 +234,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-25T12:38:49+08:00"
+        "fetched_at": "2026-10-27T02:56:43+08:00"
       },
       "source_list_url": "https://jsjds.blcu.edu.cn/dsdt.htm"
     },
@@ -231,7 +257,7 @@
       "source_name": "全国大学生电子设计竞赛（候选）",
       "source_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/345",
       "published_at": "2026-09-07T08:39:00+08:00",
-      "fetched_at": "2026-10-25T12:38:49+08:00",
+      "fetched_at": "2026-10-27T02:56:43+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -322,11 +348,39 @@
           "previous_content_hash": "0c28bddaea63a00f5e2c309cc5b267a8da87018e8a3e27f4c1af9905ef85cc79",
           "new_content_hash": "a4bd25cd4dc1f6950542326f2b06a983ffcd0ef705407519b8b0908e04a13cc0",
           "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-27T02:56:43+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "category",
+            "eligible_participants",
+            "event_start",
+            "description"
+          ],
+          "previous_content_hash": "a4bd25cd4dc1f6950542326f2b06a983ffcd0ef705407519b8b0908e04a13cc0",
+          "new_content_hash": "38513ef8042671033d2ca5e3824759743546c7a4995308bc77ac0e23082c9aeb",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        },
+        {
+          "changed_at": "2026-10-27T02:56:43+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "title",
+            "category",
+            "eligible_participants",
+            "event_start",
+            "description"
+          ],
+          "previous_content_hash": "eb93a176ee738cdcaf9904027f85ba9970c4844859899c380756e7f2be44f524",
+          "new_content_hash": "a4bd25cd4dc1f6950542326f2b06a983ffcd0ef705407519b8b0908e04a13cc0",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
         }
       ],
       "link_check": {
         "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/353",
-        "checked_at": "2026-10-25T12:39:25+08:00",
+        "checked_at": "2026-10-27T02:57:22+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -347,7 +401,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-25T12:38:49+08:00"
+        "fetched_at": "2026-10-27T02:56:43+08:00"
       },
       "source_list_url": "https://www.nuedc-training.com.cn/index/news/index"
     },
@@ -363,19 +417,19 @@
       "registration_deadline": null,
       "event_start": null,
       "event_end": null,
-      "description": "全部 官方通知 关于组织2026年全国大学生电子设计竞赛专题竞赛的通知 分享 关于组织2026年全国大学生电子设计竞赛专题竞赛的通知 2025-12-04 09:32 官方通知 摘要:全国大学生电子设计竞赛组委会在认真总结往届电子设计竞赛经验的基础上,经研究决定,启动2026年全国大学生电子设计竞赛专题竞赛组织工作,现将有关事项通知如下. 各赛区组织委员会、各有关高等学校: 全国大学生电子设计竞赛组委会在认真总结往届电子设计竞赛经验的基础上,经研究决定,启动2026年全国大学生电子设计竞赛专题竞赛组织工作,现将有关事项通知如下: 一、竞赛目的 全国大学生电子设计竞赛(以下简称全国竞赛)是面向全国大学生组织开展的学科竞赛活动。全国竞赛按照紧密结合教学实际、着重基础、注重前沿的原则开展,目的在于促进电子信息类专业和课程的建设,引导高等学校在教学中注重培养大学生的创新能力、协作精神;加强学生动手能力和工程实践能力的培养,提高学生针对工程问题进行电子设计、制作的综合能力;吸引、鼓励广大学生踊跃参加课外科技活动,为优秀人才脱颖而出创造条件。 二、竞赛名称 截止2024年,全国竞赛组委会在双数年份连续组织开展了三项专题竞赛,分别为大学生电子设计竞赛嵌入式系统专题邀请赛(英特尔杯)、 全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯)和全国大学生电子设计竞赛信息科技前沿专题赛(瑞萨杯)。受全国竞赛组委会的委托,各专题竞赛分组委会遵守全国大学生电子设计竞赛宗旨,分别组织实施的三项具有重要意义和广泛影响的专题竞赛,对单数年开展的全国电子信息类及相关专业大学生课外科技竞赛形成必要补充。 全国大学生电子设计竞赛组委会研究决定,2026年继续组织三项专题竞赛: 1.大学生电子设计竞赛嵌入式AI专题赛(英特尔杯)【原大学生电子设计竞赛嵌入式系统专题邀请赛(英特尔杯)】; 2.全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯); 3.全国大学生电子设计竞赛信息科技前沿专题赛(瑞萨杯)。 三、组织领导 全国竞赛组委会负责三项专题竞赛的组织领导、协调与宣传工作。三个专题竞赛分组委会负责各自专题竞赛的组织实施、协调与宣传工作。 四、专题竞赛实施 2026年,由全国竞赛组委会、专题竞赛分组委会和有关赛区继续组织开展大学生电子设计竞赛嵌入式AI专题赛(英特尔杯)、全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯)、全国大学生电子设计竞赛信息科技前沿专题赛(瑞萨杯)。三个专题竞赛的参赛形式均为“初赛+复赛”,报名机制均为 “选拔+邀请”,并继续适度扩充竞赛规模。同时,全国竞赛组委会支持各赛区组织开展赛区大学生电子设计竞赛,鼓励各学校根据自身条件适时组织开展学校一级的大学生电子设计竞赛。其中,各赛区在全国竞赛组委会支持下双数年开展的半封闭形式的赛区大学生电子设计竞赛可同时纳入全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯)初赛。 2026年开展的三个专题竞赛的具体时间和方式由各专题竞赛章程和通知另文细述。 三个专题竞赛均设立赛前培训渠道,各赛区组织委员会、各有关参赛高等学校应关注各专题竞赛网站及有关通知。全国竞赛组委会鼓励和支持西部赛区学校与东部赛区学校建立帮扶关系,切实加强西部赛区学生动手能力和工程实践能力的培养,落实促进教育公平,共同提升教育质量。 五、经费 各赛区竞赛组委会组织工作经费来源:采用争取政府支持、社会各界赞助的方法,也可以同时适当收取参赛报名费(由参赛学校支付)。每支参赛队报名费金额由各赛区竞赛组委会根据实际合理确定。经费的使用要公开、透明,并接受社会各界监督。全国竞赛组委会和专题竞赛分组委会在专题竞赛初赛和决赛阶段不收取报名费用。 六、其他 1. 有关竞赛组织工作中的具体事项,参照三个专题竞赛的通知执行。 2. 请各赛区竞赛组委会及有关高等学校在当地教育厅(教委)的领导下,认真筹备、精心组织好2026年本赛区的电子设计竞赛及专题竞赛,鼓励各校积极参与,正确理解专题竞赛的目的,处理好组织竞赛与保持正常教学秩序之间的关系。 3. 全国竞赛组委会秘书处设在西安交通大学,联系方式如下: 全国组委会秘书处: 符均(电话:18992858095) 电子邮件: nuedc@mail.xjtu.edu.cn 通信地址:陕西省西安市碑林区咸宁西路28号西安交通大学电子与信息学部,符均,710049 全国大学生电子设计竞赛网站 全国大学生电子设计竞赛培训网 (http://nuedc.xjtu.edu.cn) (http://nuedc-training.com.cn) 全国大学生电子设计竞赛组委会 二〇二五年十二月三日 资料下载 关于组织2026年全国大学生电子设计竞赛专题竞赛的通知 < < 上一篇 关于组织2026年全国大学生电子设计竞赛信息科技前沿专题赛的通知 下一篇 >> 关于组织2026年(第十三届)英特尔杯大学生电子设计竞赛嵌入式AI专题赛的通知 热点推荐 · 关于公布2026年全国大学生电子设计竞赛模拟电子系统设计专题赛决赛获奖名单的通知 · 关于公布2026年全国大学生电子设计竞赛模拟电子系统设计专题赛决赛获奖名单(初评)的通知 · 关于举办2026年全国大学生电子设计竞赛赛区赛及 TI 杯模拟电子系统设计专题赛赛题解析与技术交流研讨会的通知 · 关于开展2026年全国大学生电子设计竞赛模拟电子系统设计专题赛的第二次通知 · 2026年全国大学生电子设计竞赛赛区赛暨模拟电子系统设计专题赛选拔赛仪器设备和主要元器件及器材清单 培训资源 更多 > 电赛集训营助你备战2026年TI杯全国大学生电子设计竞赛 系列培训课程 2025年 TI 杯全国大学生电子设计竞赛 赛题解析与技术交流研讨会 视频回放 活动专区 更多 > TI杯电赛Vlog短视频大赛 关于举办 TI 杯 2023 年全国大学生电子设计竞赛赛题解析与技术交流研讨会的通知",
+      "description": "全部 官方通知 关于组织2026年全国大学生电子设计竞赛专题竞赛的通知 分享 关于组织2026年全国大学生电子设计竞赛专题竞赛的通知 2025-12-04 09:32 官方通知 摘要:全国大学生电子设计竞赛组委会在认真总结往届电子设计竞赛经验的基础上,经研究决定,启动2026年全国大学生电子设计竞赛专题竞赛组织工作,现将有关事项通知如下. 各赛区组织委员会、各有关高等学校: 全国大学生电子设计竞赛组委会在认真总结往届电子设计竞赛经验的基础上,经研究决定,启动2026年全国大学生电子设计竞赛专题竞赛组织工作,现将有关事项通知如下: 一、竞赛目的 全国大学生电子设计竞赛(以下简称全国竞赛)是面向全国大学生组织开展的学科竞赛活动。全国竞赛按照紧密结合教学实际、着重基础、注重前沿的原则开展,目的在于促进电子信息类专业和课程的建设,引导高等学校在教学中注重培养大学生的创新能力、协作精神;加强学生动手能力和工程实践能力的培养,提高学生针对工程问题进行电子设计、制作的综合能力;吸引、鼓励广大学生踊跃参加课外科技活动,为优秀人才脱颖而出创造条件。 二、竞赛名称 截止2024年,全国竞赛组委会在双数年份连续组织开展了三项专题竞赛,分别为大学生电子设计竞赛嵌入式系统专题邀请赛(英特尔杯)、 全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯)和全国大学生电子设计竞赛信息科技前沿专题赛(瑞萨杯)。受全国竞赛组委会的委托,各专题竞赛分组委会遵守全国大学生电子设计竞赛宗旨,分别组织实施的三项具有重要意义和广泛影响的专题竞赛,对单数年开展的全国电子信息类及相关专业大学生课外科技竞赛形成必要补充。 全国大学生电子设计竞赛组委会研究决定,2026年继续组织三项专题竞赛: 1.大学生电子设计竞赛嵌入式AI专题赛(英特尔杯)【原大学生电子设计竞赛嵌入式系统专题邀请赛(英特尔杯)】; 2.全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯); 3.全国大学生电子设计竞赛信息科技前沿专题赛(瑞萨杯)。 三、组织领导 全国竞赛组委会负责三项专题竞赛的组织领导、协调与宣传工作。三个专题竞赛分组委会负责各自专题竞赛的组织实施、协调与宣传工作。 四、专题竞赛实施 2026年,由全国竞赛组委会、专题竞赛分组委会和有关赛区继续组织开展大学生电子设计竞赛嵌入式AI专题赛(英特尔杯)、全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯)、全国大学生电子设计竞赛信息科技前沿专题赛(瑞萨杯)。三个专题竞赛的参赛形式均为“初赛+复赛”,报名机制均为 “选拔+邀请”,并继续适度扩充竞赛规模。同时,全国竞赛组委会支持各赛区组织开展赛区大学生电子设计竞赛,鼓励各学校根据自身条件适时组织开展学校一级的大学生电子设计竞赛。其中,各赛区在全国竞赛组委会支持下双数年开展的半封闭形式的赛区大学生电子设计竞赛可同时纳入全国大学生电子设计竞赛模拟电子系统设计专题赛(TI杯)初赛。 2026年开展的三个专题竞赛的具体时间和方式由各专题竞赛章程和通知另文细述。 三个专题竞赛均设立赛前培训渠道,各赛区组织委员会、各有关参赛高等学校应关注各专题竞赛网站及有关通知。全国竞赛组委会鼓励和支持西部赛区学校与东部赛区学校建立帮扶关系,切实加强西部赛区学生动手能力和工程实践能力的培养,落实促进教育公平,共同提升教育质量。 五、经费 各赛区竞赛组委会组织工作经费来源:采用争取政府支持、社会各界赞助的方法,也可以同时适当收取参赛报名费(由参赛学校支付)。每支参赛队报名费金额由各赛区竞赛组委会根据实际合理确定。经费的使用要公开、透明,并接受社会各界监督。全国竞赛组委会和专题竞赛分组委会在专题竞赛初赛和决赛阶段不收取报名费用。 六、其他 1. 有关竞赛组织工作中的具体事项,参照三个专题竞赛的通知执行。 2. 请各赛区竞赛组委会及有关高等学校在当地教育厅(教委)的领导下,认真筹备、精心组织好2026年本赛区的电子设计竞赛及专题竞赛,鼓励各校积极参与,正确理解专题竞赛的目的,处理好组织竞赛与保持正常教学秩序之间的关系。 3. 全国竞赛组委会秘书处设在西安交通大学,联系方式如下: 全国组委会秘书处: 符均(电话:18992858095) 电子邮件: nuedc@mail.xjtu.edu.cn 通信地址:陕西省西安市碑林区咸宁西路28号西安交通大学电子与信息学部,符均,710049 全国大学生电子设计竞赛网站 全国大学生电子设计竞赛培训网 (http://nuedc.xjtu.edu.cn) (http://nuedc-training.com.cn) 全国大学生电子设计竞赛组委会 二〇二五年十二月三日 资料下载 关于组织2026年全国大学生电子设计竞赛专题竞赛的通知 < < 上一篇 关于组织2026年全国大学生电子设计竞赛信息科技前沿专题赛的通知 下一篇 >> 关于组织2026年(第十三届)英特尔杯大学生电子设计竞赛嵌入式AI专题赛的通知 热点推荐 · 关于公布2026年全国大学生电子设计竞赛模拟电子系统设计专题赛决赛获奖名单的通知 · 关于公布2026年全国大学生电子设计竞赛模拟电子系统设计专题赛决赛获奖名单(初评)的通知 · 关于举办2026年全国大学生电子设计竞赛赛区赛及 TI 杯模拟电子系统设计专题赛赛题解析与技术交流研讨会的通知 · 关于开展2026年全国大学生电子设计竞赛模拟电子系统设计专题赛的第二次通知 · 2026年全国大学生电子设计竞赛赛区赛暨模拟电子系统设计专题赛选拔赛仪器设备和主要元器件及器材清单 培训资源 更多 > 2026年全国大学生电子设计竞赛赛区赛及 TI杯模拟电子系统设计专题赛 赛题解析与技术交流研讨会 视频回放 电赛集训营助你备战2026年TI杯全国大学生电子设计竞赛 系列培训课程 活动专区 更多 > TI杯电赛Vlog短视频大赛 关于举办 TI 杯 2023 年全国大学生电子设计竞赛赛题解析与技术交流研讨会的通知",
       "requirements": null,
       "official_notice_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/343",
       "registration_url": null,
       "source_name": "全国大学生电子设计竞赛（候选）",
       "source_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/343",
       "published_at": null,
-      "fetched_at": "2026-10-25T12:38:49+08:00",
+      "fetched_at": "2026-10-27T02:56:43+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
       "confidence": 0.45,
-      "content_hash": "b9ba7ecbc350eec86a8ccd4e959ab182a74ee81788214e594ff81e844d69345b",
+      "content_hash": "0e4d0d6b68ad86b6b30395ce8c647b7fc095e2a0e1f90f16948761f817de74e5",
       "region": "全国",
       "is_demo": false,
       "missing_fields": [
@@ -390,15 +444,26 @@
         "registration_url",
         "published_at"
       ],
-      "verification_notes": "链接核验事实：通知链接=HTTP 可达。HTTP 可达不代表报名开放或报名有效，赛事与报名资格仍需人工核验。",
+      "verification_notes": "来源内容发生变化，需人工复核后再确认。",
       "source_id": "nuedc",
       "source_type": "official_candidate",
       "canonical_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/343",
       "verification_history": [],
-      "change_history": [],
+      "change_history": [
+        {
+          "changed_at": "2026-10-27T02:56:43+08:00",
+          "event": "content_changed_pending_verification",
+          "fields": [
+            "description"
+          ],
+          "previous_content_hash": "b9ba7ecbc350eec86a8ccd4e959ab182a74ee81788214e594ff81e844d69345b",
+          "new_content_hash": "0e4d0d6b68ad86b6b30395ce8c647b7fc095e2a0e1f90f16948761f817de74e5",
+          "note": "来源内容发生变化，已保留旧记录信息摘要并标记待人工核验。"
+        }
+      ],
       "link_check": {
         "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/343",
-        "checked_at": "2026-10-25T12:39:23+08:00",
+        "checked_at": "2026-10-27T02:57:20+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -419,7 +484,7 @@
         "same_domain": true,
         "content_source": "main",
         "error": null,
-        "fetched_at": "2026-10-25T12:38:49+08:00"
+        "fetched_at": "2026-10-27T02:56:43+08:00"
       },
       "source_list_url": "https://www.nuedc-training.com.cn/index/news/index"
     },
@@ -442,7 +507,7 @@
       "source_name": "全国大学生广告艺术大赛（候选）",
       "source_url": "https://www.sun-ada.net/news_xqs3328.html?lid=2",
       "published_at": "2026-09-15T00:00:00+08:00",
-      "fetched_at": "2026-10-25T12:38:49+08:00",
+      "fetched_at": "2026-10-27T02:56:43+08:00",
       "last_verified_at": null,
       "verification_status": "pending",
       "registration_status": "unknown",
@@ -469,7 +534,7 @@
       "change_history": [],
       "link_check": {
         "url": "https://www.sun-ada.net/news_xqs3328.html?lid=2",
-        "checked_at": "2026-10-25T12:39:40+08:00",
+        "checked_at": "2026-10-27T02:57:37+08:00",
         "status": "ok",
         "status_label": "HTTP 可达",
         "http_status": 200,
@@ -490,7 +555,7 @@
         "same_domain": true,
         "content_source": "fallback",
         "error": null,
-        "fetched_at": "2026-10-25T12:38:49+08:00"
+        "fetched_at": "2026-10-27T02:56:43+08:00"
       },
       "source_list_url": "https://www.sun-ada.net/home/newss.html"
     }
