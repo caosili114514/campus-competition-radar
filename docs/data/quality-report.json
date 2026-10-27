@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-10-27T02:57:41+08:00",
+  "generated_at": "2026-10-28T02:53:53+08:00",
   "summary": {
-    "message": "共 5 条记录；待人工核验 5 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 5 次。",
+    "message": "共 5 条记录；待人工核验 5 条；来源 6 个（启用 6，成功 5，失败 0）；链接事实已检查 5 次。",
     "record_count": 5,
     "pending_verification_count": 5,
     "verified_record_count": 0
   },
-  "summary_text": "共 5 条记录；待人工核验 5 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 5 次。",
+  "summary_text": "共 5 条记录；待人工核验 5 条；来源 6 个（启用 6，成功 5，失败 0）；链接事实已检查 5 次。",
   "totals": {
     "record_count": 5,
     "verified_record_count": 0,
     "pending_verification_count": 5,
     "source_count": 6,
     "enabled_source_count": 6,
-    "successful_source_count": 6,
+    "successful_source_count": 5,
     "failed_source_count": 0,
-    "skipped_source_count": 0,
+    "skipped_source_count": 1,
     "disabled_source_count": 0,
     "links_checked": 5
   },
@@ -159,9 +159,9 @@
   "source_summary": {
     "total": 6,
     "enabled": 6,
-    "success": 6,
+    "success": 5,
     "failed": 0,
-    "skipped": 0,
+    "skipped": 1,
     "disabled": 0,
     "verified": 0,
     "needs_manual_verification": 6
@@ -170,6 +170,7 @@
     "没有已验证信息源；所有来源和记录均不得标注为官方确认或已核实。",
     "所有自动采集记录均需人工核验；registration_status 仅由明确日期推导，不由链接状态推断。",
     "5 条链接仅记录为 HTTP 可达，不代表报名开放或报名有效。",
+    "1 个启用来源因 update_frequency、manual 或 robots.txt 规则被跳过；不代表来源无效。",
     "所有记录的报名入口均待确认；程序没有根据通知页或首页猜测报名 URL。"
   ],
   "notice": "质量报告描述采集与字段完整度，不构成对赛事真实性、报名开放状态或主办方授权的认证。"
