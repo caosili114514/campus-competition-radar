@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-10-28T14:35:16+08:00",
+  "generated_at": "2026-10-28T14:41:57+08:00",
   "last_run": {
-    "started_at": "2026-10-28T14:34:14+08:00",
-    "finished_at": "2026-10-28T14:35:16+08:00",
+    "started_at": "2026-10-28T14:40:58+08:00",
+    "finished_at": "2026-10-28T14:41:57+08:00",
     "status": "success",
     "message": "采集完成；共输出 5 条 live 记录，全部仍需人工核验。"
   },
@@ -172,48 +172,67 @@
       "content_changed": 4,
       "record_count": 5,
       "pending_verification_count": 5
+    },
+    {
+      "run_id": "run_20261028T144058+0800_3113c2",
+      "started_at": "2026-10-28T14:40:58+08:00",
+      "finished_at": "2026-10-28T14:41:57+08:00",
+      "status": "success",
+      "message": "采集完成；共输出 5 条 live 记录，全部仍需人工核验。",
+      "source_count": 6,
+      "success_count": 5,
+      "failure_count": 0,
+      "robots_blocked_count": 1,
+      "not_due_count": 0,
+      "manual_skipped_count": 0,
+      "skipped_count": 1,
+      "records_added": 0,
+      "records_updated": 4,
+      "content_changed": 4,
+      "record_count": 5,
+      "pending_verification_count": 5
     }
   ],
   "source_schedule": [
     {
       "id": "jsjds_blcu",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "success"
     },
     {
       "id": "ciscn",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "empty"
     },
     {
       "id": "nuedc",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "success"
     },
     {
       "id": "mcm",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "empty"
     },
     {
       "id": "sun_ada",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "empty"
     },
     {
       "id": "fwwb",
       "update_frequency": "daily",
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
       "last_success_at": "2026-10-27T02:56:43+08:00",
       "status": "robots_blocked"
     }

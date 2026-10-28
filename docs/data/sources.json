@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-10-28T14:35:16+08:00",
+  "generated_at": "2026-10-28T14:41:57+08:00",
   "notice": "来源 verified=false 表示尚未人工确认抓取许可、页面结构、正文真实性与主办方授权；列表页 HTTP 200 只是当时的可访问事实，不构成验证。",
   "source_count": 6,
   "enabled_count": 6,
@@ -70,8 +70,8 @@
       "max_records": null,
       "request_delay_seconds": 2.0,
       "items_path": null,
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "success",
       "result": "抓取成功，解析 27 条候选，过滤后 3 条",
       "failure_reason": null,
@@ -88,7 +88,7 @@
         "robots_url": "https://jsjds.blcu.edu.cn/robots.txt",
         "http_status": 404,
         "reason": "robots.txt 返回 404，按不存在处理",
-        "checked_at": "2026-10-28T14:34:14+08:00"
+        "checked_at": "2026-10-28T14:40:58+08:00"
       },
       "detail_fetch_attempted": 3,
       "detail_fetch_failed": 0,
@@ -155,12 +155,12 @@
         "人气奖",
         "投票"
       ],
-      "max_items_per_run": 10,
+      "max_items_per_run": 20,
       "max_records": null,
       "request_delay_seconds": 2.0,
       "items_path": null,
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "empty",
       "result": "抓取成功，但过滤和抽取后没有可输出记录",
       "failure_reason": null,
@@ -177,7 +177,7 @@
         "robots_url": "http://www.ciscn.cn/robots.txt",
         "http_status": 200,
         "reason": "robots.txt 允许抓取",
-        "checked_at": "2026-10-28T14:34:14+08:00"
+        "checked_at": "2026-10-28T14:40:58+08:00"
       },
       "detail_fetch_attempted": 0,
       "detail_fetch_failed": 0,
@@ -244,12 +244,12 @@
         "人气奖",
         "投票"
       ],
-      "max_items_per_run": 10,
+      "max_items_per_run": 20,
       "max_records": null,
       "request_delay_seconds": 2.0,
       "items_path": null,
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "success",
       "result": "抓取成功，解析 47 条候选，过滤后 3 条",
       "failure_reason": null,
@@ -266,7 +266,7 @@
         "robots_url": "https://www.nuedc-training.com.cn/robots.txt",
         "http_status": 404,
         "reason": "robots.txt 返回 404，按不存在处理",
-        "checked_at": "2026-10-28T14:34:14+08:00"
+        "checked_at": "2026-10-28T14:40:58+08:00"
       },
       "detail_fetch_attempted": 3,
       "detail_fetch_failed": 0,
@@ -333,12 +333,12 @@
         "人气奖",
         "投票"
       ],
-      "max_items_per_run": 10,
+      "max_items_per_run": 20,
       "max_records": null,
       "request_delay_seconds": 2.0,
       "items_path": null,
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "empty",
       "result": "抓取成功，但过滤和抽取后没有可输出记录",
       "failure_reason": null,
@@ -355,7 +355,7 @@
         "robots_url": "https://www.mcm.edu.cn/robots.txt",
         "http_status": 200,
         "reason": "robots.txt 允许抓取",
-        "checked_at": "2026-10-28T14:34:14+08:00"
+        "checked_at": "2026-10-28T14:40:58+08:00"
       },
       "detail_fetch_attempted": 0,
       "detail_fetch_failed": 0,
@@ -422,12 +422,12 @@
         "人气奖",
         "投票"
       ],
-      "max_items_per_run": 10,
+      "max_items_per_run": 20,
       "max_records": null,
       "request_delay_seconds": 2.0,
       "items_path": null,
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
-      "last_success_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
+      "last_success_at": "2026-10-28T14:40:58+08:00",
       "status": "empty",
       "result": "抓取成功，但过滤和抽取后没有可输出记录",
       "failure_reason": null,
@@ -444,7 +444,7 @@
         "robots_url": "https://www.sun-ada.net/robots.txt",
         "http_status": 200,
         "reason": "robots.txt 允许抓取",
-        "checked_at": "2026-10-28T14:34:14+08:00"
+        "checked_at": "2026-10-28T14:40:58+08:00"
       },
       "detail_fetch_attempted": 0,
       "detail_fetch_failed": 0,
@@ -515,7 +515,7 @@
       "max_records": null,
       "request_delay_seconds": 2.0,
       "items_path": null,
-      "last_checked_at": "2026-10-28T14:34:14+08:00",
+      "last_checked_at": "2026-10-28T14:40:58+08:00",
       "last_success_at": "2026-10-27T02:56:43+08:00",
       "status": "robots_blocked",
       "result": "遵守 robots.txt，未抓取：robots.txt 不可确认（HTTP 502），谨慎跳过来源",
@@ -533,7 +533,7 @@
         "robots_url": "https://www.fwwb.org.cn/robots.txt",
         "http_status": 502,
         "reason": "robots.txt 不可确认（HTTP 502），谨慎跳过来源",
-        "checked_at": "2026-10-28T14:34:14+08:00"
+        "checked_at": "2026-10-28T14:40:58+08:00"
       },
       "detail_fetch_attempted": 0,
       "detail_fetch_failed": 0,
