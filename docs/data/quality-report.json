@@ -1,29 +1,29 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-11-12T08:44:13+08:00",
+  "generated_at": "2026-11-13T07:39:47+08:00",
   "summary": {
-    "message": "共 5 条记录；待人工核验 5 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 5 次。",
-    "record_count": 5,
-    "pending_verification_count": 5,
+    "message": "共 6 条记录；待人工核验 6 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 6 次。",
+    "record_count": 6,
+    "pending_verification_count": 6,
     "verified_record_count": 0
   },
-  "summary_text": "共 5 条记录；待人工核验 5 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 5 次。",
+  "summary_text": "共 6 条记录；待人工核验 6 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 6 次。",
   "totals": {
-    "record_count": 5,
+    "record_count": 6,
     "verified_record_count": 0,
-    "pending_verification_count": 5,
+    "pending_verification_count": 6,
     "source_count": 6,
     "enabled_source_count": 6,
     "successful_source_count": 6,
     "failed_source_count": 0,
     "skipped_source_count": 0,
     "disabled_source_count": 0,
-    "links_checked": 5
+    "links_checked": 6
   },
   "verification_status_counts": {
     "verified": 0,
-    "pending": 5,
+    "pending": 6,
     "broken": 0,
     "expired": 0,
     "incomplete": 0
@@ -32,104 +32,104 @@
     "open": 0,
     "upcoming": 0,
     "closed": 0,
-    "unknown": 5
+    "unknown": 6
   },
   "field_coverage": {
     "organizer": {
       "present": 2,
-      "total": 5,
-      "percent": 40.0
+      "total": 6,
+      "percent": 33.3
     },
     "category": {
       "present": 5,
-      "total": 5,
-      "percent": 100.0
+      "total": 6,
+      "percent": 83.3
     },
     "competition_level": {
       "present": 0,
-      "total": 5,
+      "total": 6,
       "percent": 0.0
     },
     "eligible_participants": {
       "present": 4,
-      "total": 5,
-      "percent": 80.0
+      "total": 6,
+      "percent": 66.7
     },
     "team_size": {
       "present": 2,
-      "total": 5,
-      "percent": 40.0
+      "total": 6,
+      "percent": 33.3
     },
     "registration_start": {
       "present": 0,
-      "total": 5,
+      "total": 6,
       "percent": 0.0
     },
     "registration_deadline": {
       "present": 0,
-      "total": 5,
+      "total": 6,
       "percent": 0.0
     },
     "event_start": {
       "present": 1,
-      "total": 5,
-      "percent": 20.0
+      "total": 6,
+      "percent": 16.7
     },
     "event_end": {
       "present": 1,
-      "total": 5,
-      "percent": 20.0
+      "total": 6,
+      "percent": 16.7
     },
     "description": {
-      "present": 5,
-      "total": 5,
+      "present": 6,
+      "total": 6,
       "percent": 100.0
     },
     "requirements": {
       "present": 1,
-      "total": 5,
-      "percent": 20.0
+      "total": 6,
+      "percent": 16.7
     },
     "official_notice_url": {
-      "present": 5,
-      "total": 5,
+      "present": 6,
+      "total": 6,
       "percent": 100.0
     },
     "registration_url": {
       "present": 0,
-      "total": 5,
+      "total": 6,
       "percent": 0.0
     },
     "published_at": {
-      "present": 4,
-      "total": 5,
-      "percent": 80.0
+      "present": 5,
+      "total": 6,
+      "percent": 83.3
     },
     "region": {
-      "present": 4,
-      "total": 5,
-      "percent": 80.0
+      "present": 5,
+      "total": 6,
+      "percent": 83.3
     }
   },
   "missing_field_counts": {
-    "organizer": 3,
-    "category": 0,
-    "competition_level": 5,
-    "eligible_participants": 1,
-    "team_size": 3,
-    "registration_start": 5,
-    "registration_deadline": 5,
-    "event_start": 4,
-    "event_end": 4,
+    "organizer": 4,
+    "category": 1,
+    "competition_level": 6,
+    "eligible_participants": 2,
+    "team_size": 4,
+    "registration_start": 6,
+    "registration_deadline": 6,
+    "event_start": 5,
+    "event_end": 5,
     "description": 0,
-    "requirements": 4,
+    "requirements": 5,
     "official_notice_url": 0,
-    "registration_url": 5,
+    "registration_url": 6,
     "published_at": 1,
     "region": 1
   },
   "link_check_summary": {
-    "ok": 5,
+    "ok": 6,
     "redirect": 0,
     "timeout": 0,
     "forbidden": 0,
@@ -154,7 +154,7 @@
     "http_error": 0,
     "invalid_url": 0,
     "unknown": 0,
-    "not_checked": 5
+    "not_checked": 6
   },
   "source_summary": {
     "total": 6,
@@ -169,7 +169,7 @@
   "warnings": [
     "没有已验证信息源；所有来源和记录均不得标注为官方确认或已核实。",
     "所有自动采集记录均需人工核验；registration_status 仅由明确日期推导，不由链接状态推断。",
-    "5 条链接仅记录为 HTTP 可达，不代表报名开放或报名有效。",
+    "6 条链接仅记录为 HTTP 可达，不代表报名开放或报名有效。",
     "所有记录的报名入口均待确认；程序没有根据通知页或首页猜测报名 URL。"
   ],
   "notice": "质量报告描述采集与字段完整度，不构成对赛事真实性、报名开放状态或主办方授权的认证。"
