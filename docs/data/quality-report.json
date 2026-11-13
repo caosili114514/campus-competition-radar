@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "data_mode": "live",
-  "generated_at": "2026-11-13T07:39:47+08:00",
+  "generated_at": "2026-11-14T07:33:36+08:00",
   "summary": {
     "message": "共 6 条记录；待人工核验 6 条；来源 6 个（启用 6，成功 6，失败 0）；链接事实已检查 6 次。",
     "record_count": 6,
